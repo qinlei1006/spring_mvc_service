@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.sql.Date;
+import java.util.List;
 
 public class T {
 
@@ -15,7 +16,12 @@ public class T {
         IUserService service= (IUserService) context.getBean("userService");
 
 
-        service.addUser(new UserEntity("ssss","333",22));
+        List<UserEntity> list = service.findAll();
+        for (UserEntity user:list
+             ) {
+            System.out.println(user.getId()+"  "+user.getUserName()+"  "+user.getAge()+"  "+user.getPassword());
+        }
+//        service.addUser(new UserEntity("ssss","333",22));
 //       UserEntity userEntity = service.findById(1);
 //        System.out.println(userEntity.getAge()+userEntity.getUserName());
 

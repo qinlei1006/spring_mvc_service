@@ -7,6 +7,8 @@ import com.lovo.ss.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service(value = "userService")
 public class UserService implements IUserService {
 
@@ -43,5 +45,10 @@ public class UserService implements IUserService {
      */
     public void addUserInfo(UserInfoEntity userInfoEntity) {
         userDao.addUserInfo(userInfoEntity);
+    }
+
+    @Override
+    public List<UserEntity> findAll() {
+        return userDao.findAll();
     }
 }

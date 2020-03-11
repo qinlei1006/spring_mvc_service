@@ -3,6 +3,8 @@ package com.lovo.ss.service;
 import com.lovo.ss.entit.UserEntity;
 import com.lovo.ss.entit.UserInfoEntity;
 
+import java.util.List;
+
 public interface IUserService {
 
     /**
@@ -22,5 +24,7 @@ public interface IUserService {
      * @param userInfoEntity
      */
     public void addUserInfo(UserInfoEntity userInfoEntity);
+
+    public List<UserEntity>  findAll();
 
 }

@@ -4,6 +4,10 @@ import com.lovo.ss.entit.UserEntity;
 import com.lovo.ss.entit.UserInfoEntity;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 public interface IUserDao {
 
@@ -29,4 +33,10 @@ public interface IUserDao {
     @Insert("insert into t_userinfo(post,salary,time,userId)values(#{post},#{salary},#{time},#{userEntity.id})")
     public void addUserInfo(UserInfoEntity userInfoEntity);
 
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    public List<UserEntity> findAll();
 }

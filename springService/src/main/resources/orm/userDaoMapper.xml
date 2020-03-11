@@ -14,5 +14,9 @@
         select * from t_user where id=#{param1}
      </select>
 
+    <select id="findAll" resultMap="userMap">
+        select * from t_user
+    </select>
+
 
 </mapper>

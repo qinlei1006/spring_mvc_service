@@ -66,4 +66,29 @@ public class UserController {
         return  mv;
     }
 
-}
+
+    @RequestMapping("findAll.lovo")
+    public String findAll(){
+        //调用服务器数据，所以它对于浏览器属于后端，对于后端服务器属于客户端
+        //1、创建httpclient 对象
+        HttpClient httpClient= HttpClients.createDefault();
+        //创建get对象
+        HttpGet httpGet=new HttpGet("http://localhost:8080/service/findAll.lovo");
+        //执行get请求,并获取返回
+        try {
+        HttpResponse httpResponse= httpClient.execute(httpGet);
+        //获取返回的实体
+        HttpEntity httpEntity= httpResponse.getEntity();
+        //获取实体对象中的字符，也就是后端返回的json
+        String json=   EntityUtils.toString(httpEntity,"utf-8");
+
+        return json;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  "";
+    }
+
+    }
+
+
