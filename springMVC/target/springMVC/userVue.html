@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   </head>
+<body>
+
+<div id="userAdd" align="center">
+注册用户<p/>
+    <form action="addUser.lovo" method="post">
+   用户名：<input type="text"  name="userName" id="userName"><p/>
+   密码：<input type="password" name="password" id="password"><p/>
+   年龄：<input type="number" name="age" id="age"><p/>
+    <input type="submit"/>
+    </form>
+</div><p/>
+
+当前添加用户信息
+<div id="userInfoDiv">
+    <span>id:{{id}}}</span>
+    <span>用户：{{userName}}</span><p/>
+    <span>密码：{{password}}</span><p/>
+    <span>年龄：{{age}}</span><p/>
+    <input type="button" value="点击获取用户信息" {{getUser()}} />
+</div>
+
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<!--AJAX-->
+<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+<script>
+    new Vue({
+        el:"#vid",
+        data:{
+            userName:"",
+            password:"",
+            age:"",
+            id:""
+        },
+        methods:{
+            getUser:function () {
+                //发送get请求
+                this.$http.get('findById.lovo').then(function(result){
+                    var r= result.body;
+                    //把json字符串转换为json对象
+                    var json_r=   JSON.parse(r);
+                    //填充数据
+                    this.userName=json_r.userName;
+                    this.password=json_r.password;
+                    this.age=json_r.age;
+                    this.id=json_r.id;
+                },function(){
+                    console.log('请求失败处理');
+                });
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
