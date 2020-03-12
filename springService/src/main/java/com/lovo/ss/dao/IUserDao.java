@@ -1,11 +1,9 @@
 package com.lovo.ss.dao;
 
-import com.lovo.ss.entit.UserEntity;
-import com.lovo.ss.entit.UserInfoEntity;
+import com.lovo.ss.entity.UserEntity;
+import com.lovo.ss.entity.UserInfoEntity;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -19,12 +17,6 @@ public interface IUserDao {
      @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     public void addUser(UserEntity userEntity);
 
-    /**
-     * 按照id查询用户信息
-     * @param id
-     * @return
-     */
-    public UserEntity findById(int id);
 
     /**
      * 添加用户信息

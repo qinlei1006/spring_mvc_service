@@ -1,7 +1,7 @@
 package com.lovo.ss.service;
 
-import com.lovo.ss.entit.UserEntity;
-import com.lovo.ss.entit.UserInfoEntity;
+import com.lovo.ss.entity.UserEntity;
+import com.lovo.ss.entity.UserInfoEntity;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public interface IUserService {
      * 按照id查询用户信息
      * @return
      */
-    public UserEntity findById();
+    public UserInfoEntity findById(int userId);
 
     /**
      * 添加用户信息
@@ -26,5 +26,7 @@ public interface IUserService {
     public void addUserInfo(UserInfoEntity userInfoEntity);
 
     public List<UserEntity>  findAll();
+
+    public List<UserEntity> affair(UserEntity userEntity);
 
 }

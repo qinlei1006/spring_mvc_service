@@ -9,6 +9,14 @@ public class UserInfoVo {
     private Date time;
     private UserVo userEntity;
 
+    public UserVo getUserEntity() {
+        return userEntity;
+    }
+
+    public void setUserEntity(UserVo userEntity) {
+        this.userEntity = userEntity;
+    }
+
     public UserInfoVo() {
     }
 

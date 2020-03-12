@@ -5,9 +5,9 @@
 <mapper namespace="com.lovo.ss.dao.IUserDao">
      <resultMap id="userMap" type="userEntity">
          <id column="id" property="id" />
-         <id column="userName" property="userName"/>
-         <id column="password" property="password"/>
-         <id column="age" property="age"/>
+         <result column="userName" property="userName"/>
+         <result column="password" property="password"/>
+         <result column="age" property="age"/>
      </resultMap>
 
      <select id="findById" resultMap="userMap">

@@ -10,6 +10,7 @@
 <div id="userAdd" align="center">
 注册用户<p/>
     <form action="addUser.lovo" method="post">
+        {{info}}
    用户名：<input type="text"  name="userName" id="userName"><p/>
    密码：<input type="password" name="password" id="password"><p/>
    年龄：<input type="number" name="age" id="age"><p/>
@@ -23,7 +24,7 @@
     <span>用户：{{userName}}</span><p/>
     <span>密码：{{password}}</span><p/>
     <span>年龄：{{age}}</span><p/>
-    <input type="button" value="点击获取用户信息" {{getUser()}} />
+    <input type="button" value="点击获取用户信息"  @click="getUserInfo(id)"/>
 </div>
 
 

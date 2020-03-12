@@ -6,15 +6,16 @@
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
     <!--AJAX-->
     <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
+
 
 <div id="lid" align="center">
     <table border="1">
 
             <tr>
-                <th>ID</th><th>姓名</th><th>密码</th><th>年龄</th>
+                <th>ID</th><th>姓名</th><th>密码</th><th>年龄</th><th>操作</th>
             </tr>
 
             <tr v-for="u in info">
@@ -22,6 +23,7 @@
                 <td>{{u.userName}}</td>
                 <td>{{u.password}}</td>
                 <td>{{u.age}}</td>
+                <td><button @click="getUserInfo(u.id)">查询信息</button></td>
             </tr>
 
     </table>
@@ -31,20 +33,40 @@
     new Vue({
         el:"#lid",
         data:{
-            info:""
+            info:"",
+            userInfo:""
         },
+
         mounted:function () {
-            //    发送get请求
-            this.$http.get('findAll.lovo').then(function (result) {
-                var r= result.body;
-                alert(r)
-                //把json字符串转换为json对象
-                var json_r=   JSON.parse(r);
-                //    把数据绑定到data中
-                this.info = json_r;
-            },function(){
-                console.log('请求失败处理');
-            });
+
+
+               // 发送get请求
+            // this.$http.get('findAll.lovo').then(function (result) {
+            //     var r= result.body;
+            //     alert(r)
+            //   //把json字符串转换为json对象
+            //     var json_r=   JSON.parse(r);
+            //    //    把数据绑定到data中
+            //     this.info = json_r;
+            // },function(){
+            //     console.log('请求失败处理');
+            // });
+
+                    axios.post('findAll.lovo').then(function (res){
+                           this.info = JSON.parse(res.data);
+                    }.bind(this),function (res) {
+                          console.log(res)
+                    });
+        },
+        methods:{
+            getUserInfo:function (id) {
+               axios.get("findById.lovo?id="+id).then(function (res) {
+                  alert(res.data)
+               }.bind(this),function (res) {
+                   console.log(res)
+               });
+
+            }
         }
     })
 </script>

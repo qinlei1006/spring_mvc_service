@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="addDiv" >
+    职位：<input type="text"  v-model="post" /><p/>
+    工资：<input type="text" v-model="salary" /><p/>
+    工作时间：<input type="date" v-model="time" /><p/>
+    员工ID:<input type="number" v-model="userId" /><p/>
+    <button @click="submitInfo">提交表单</button>
+</div>
+
+
+<script>
+    new Vue({
+        el:"#addDiv",
+        data:{
+            post:"",
+            // salary:"",
+            // time:"",
+            // userId:""
+        },
+        methods:{
+            submitInfo:function () {
+                // axios.post('addUserInfo.lovo').then(function (res) {
+                //       alert(res)
+                // })
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

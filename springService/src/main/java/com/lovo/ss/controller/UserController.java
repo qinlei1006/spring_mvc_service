@@ -1,13 +1,11 @@
 package com.lovo.ss.controller;
 
-import com.lovo.ss.entit.UserEntity;
-import com.lovo.ss.entit.UserInfoEntity;
+import com.lovo.ss.entity.UserEntity;
+import com.lovo.ss.entity.UserInfoEntity;
 import com.lovo.ss.service.IUserService;
-import org.apache.ibatis.annotations.Insert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -37,9 +35,10 @@ private String test(){
      * 按照id查询用户信息
      * @return
      */
-    @RequestMapping("findById.lovo")
-    public UserEntity findById(){
-      return   service.findById();
+    @RequestMapping("findById.lovo/{userId}")
+    public UserInfoEntity findById(@PathVariable Integer userId){
+        System.out.println(userId);
+      return   service.findById(userId);
     }
 
     /**
