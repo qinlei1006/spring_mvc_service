@@ -65,7 +65,9 @@
 <!--         所有以find 结尾的方法都为只读，不需要事务-->
          <tx:method name="*find" read-only="true"/>
 <!--         所有方法抛出异常都进行事务回滚-->
-         <tx:method name="*" rollback-for="Exception"/>
+<!--         propagation="REQUIRED" 默认事务可以不用写， 事务传播方式-->
+<!--         isolation="READ_COMMITTED" 默认事务隔离级别也可以不写-->
+         <tx:method name="*" rollback-for="Exception" propagation="REQUIRED" isolation="READ_COMMITTED"/>
       </tx:attributes>
    </tx:advice>
 

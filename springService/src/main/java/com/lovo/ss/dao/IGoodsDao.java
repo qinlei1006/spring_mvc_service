@@ -1,5 +1,6 @@
 package com.lovo.ss.dao;
 
+import com.lovo.ss.entity.GoodsEntity;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -19,4 +20,7 @@ public interface IGoodsDao {
      * @return
      */
     public int findById(int goodsId);
+
+
+    public void add(GoodsEntity goodsEntity);
 }

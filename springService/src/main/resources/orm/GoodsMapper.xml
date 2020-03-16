@@ -14,4 +14,7 @@
     </update>
 
 
+    <insert id="add" parameterType="goodsEntity">
+        insert into t_goods(f_goodsName,f_number)values (#{goodsName},#{number})
+    </insert>
 </mapper>
