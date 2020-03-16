@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springService" />
         <module name="springMVC" />
-        <module name="hibernateJ174" />
+        <module name="springHibernate" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

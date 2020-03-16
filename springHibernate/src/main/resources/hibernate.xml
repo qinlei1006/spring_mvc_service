@@ -15,8 +15,10 @@
 <!--        update 对象属性改变，那么hibernate会去修改表的列进行同步-->
 <!--        create 自动hibernate的时候，会把数据库的表全部删除，重新再建（慎用）-->
         <property name="hbm2ddl.auto">update</property>
-
+<!--        打印sql 语句-->
+        <property name="show_sql">true</property>
 <!--        把mapper交给hibernate-->
         <mapping class="com.lovo.hibernate.entity.UserEntity"></mapping>
+        <mapping class="com.lovo.hibernate.entity.RoleEntity"></mapping>
     </session-factory>
 </hibernate-configuration>

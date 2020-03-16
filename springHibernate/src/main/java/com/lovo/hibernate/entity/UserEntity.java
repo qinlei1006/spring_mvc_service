@@ -1,8 +1,6 @@
 package com.lovo.hibernate.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity  //被hibernate管理的标签
@@ -10,23 +8,41 @@ import javax.persistence.Table;
 public class UserEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int  userId;
+//    name列名，length长度，nullable是否可以为空
+    @Column(name = "u_name",length = 48,nullable = false)
     private String userName;
+//    insertable  = false 表示添加的时候不把数据添加到数据库
+//    @Column(insertable = false,length = 48,name = "u_password")
+//    不与表进行映射（冗余字段）
+//    @Transient //暂态
+    @Column(length = 48,name = "u_password")
     private String password;
+//   将java不认识的时间字符串转为数据时间
+    @Column(columnDefinition = "TIMESTAMP")
+    private String addDate;
+//    定义文本数据
+    @Column(columnDefinition = "TEXT")
+    private String info;
+
+
     private int age;
 
+    public UserEntity(String userName, String password, String addDate, String info, int age) {
+        this.userName = userName;
+        this.password = password;
+        this.addDate = addDate;
+        this.info = info;
+        this.age = age;
+    }
 
     public UserEntity() {
     }
 
-      public UserEntity(int userId, String userName, String password, int age) {
-          this.userId = userId;
-          this.userName = userName;
-          this.password = password;
-          this.age = age;
-      }
 
-      public int getUserId() {
+
+    public int getUserId() {
         return userId;
     }
 
