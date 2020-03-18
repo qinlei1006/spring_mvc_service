@@ -20,5 +20,7 @@
 <!--        把mapper交给hibernate-->
         <mapping class="com.lovo.hibernate.entity.UserEntity"></mapping>
         <mapping class="com.lovo.hibernate.entity.RoleEntity"></mapping>
+        <mapping class="com.lovo.hibernate.entity.TeacherEntity"/>
+        <mapping class="com.lovo.hibernate.entity.StudentEntity"/>
     </session-factory>
 </hibernate-configuration>

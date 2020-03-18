@@ -19,6 +19,7 @@ public class RoleEntity {
     private String roleName;
 
     public RoleEntity() {
+
     }
 
 
