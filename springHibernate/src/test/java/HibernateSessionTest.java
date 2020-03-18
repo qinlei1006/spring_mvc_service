@@ -98,7 +98,7 @@ public class HibernateSessionTest {
 //        开启事务
         transaction.begin();
         RoleEntity roleEntity = new RoleEntity();
-            roleEntity.setRoleName("管理者"+i);
+            roleEntity.setRoleName("管理者00"+i);
 //        执行保存
         session.save(roleEntity);
             //        事务提交

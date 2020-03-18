@@ -1,0 +1,6 @@
+com\lovo\hibernate\entity\RoleEntity.class
+com\lovo\hibernate\util\HSession.class
+com\lovo\hibernate\entity\StudentEntity.class
+com\lovo\hibernate\entity\TeacherEntity.class
+com\lovo\hibernate\entity\UserEntity.class
+com\lovo\hibernate\util\GrtUUID.class

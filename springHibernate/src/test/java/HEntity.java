@@ -7,11 +7,11 @@ import org.junit.Test;
 
 public class HEntity {
 
-    Session session;
+    Session session = null;
 
     @Before
     public void getSession(){
-        Session  session = HSession.createSession();
+       session = HSession.createSession();
     }
 
     @Test
@@ -43,7 +43,7 @@ public class HEntity {
 //        因为这个id是数据库中的，再获取这个对象内存也就有。所以是持久状态。
         RoleEntity roleEntity = session.get(RoleEntity.class,"4028098170e167190170e1671ac10000");
 //        操作持久状态
-        roleEntity.setRoleName("学生");
+        roleEntity.setRoleName("大哥");
 //        提交事务：提交事务才，如数据库的数据与内存中不一样会执行update语句将缓存中的数据修改到数据库中，若内存中的数据与数据库一样只执行查询语句。
         transaction.commit();
         session.close();
@@ -53,10 +53,12 @@ public class HEntity {
     @Test
     public void get(){
 //        查询出来后放在缓存中
-        RoleEntity roleEntity = session.get(RoleEntity.class,"4028098170e167190170e1671ada0001");
+        RoleEntity roleEntity = session.get(RoleEntity.class,"402883b970ec3f9a0170ec3f9c1a0000");
         session.close();
 //        从缓存中获取数据，所关闭session后还是可以从缓存中获得数据
         System.out.println("session关闭之后"+roleEntity.getRoleName());
+
+
     }
 
 
