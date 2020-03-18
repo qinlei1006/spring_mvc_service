@@ -4,7 +4,6 @@ import com.lovo.hibernate.util.HSession;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,13 +27,25 @@ public class MyManyToOneTest {
     public void addTeacher(){
           TeacherEntity  teacherEntity = new TeacherEntity();
        teacherEntity.setTeacherName("张老师");
+       teacherEntity.setTeacherClass("java班");
         session.save(teacherEntity);
 
     }
 
+
+    @Test
+    public void cascadeTest(){
+        Session session = HSession.createSession();
+        session.delete(session.get(StudentEntity.class,
+                "402883b970ec7b3e0170ec7b40750005"));
+//        StudentEntity studentEntity = session.get(StudentEntity.class,"402883b970ec7b3e0170ec7b40750005");
+//        System.out.println(studentEntity.getStudentName());
+        session.close();
+    }
+
     @Test
     public void addStudent(){
-        TeacherEntity teacherEntity = session.get(TeacherEntity.class,"4028098170eba6370170eba63a450000");
+        TeacherEntity teacherEntity = session.get(TeacherEntity.class,"402883b970ec75ee0170ec75efb70000");
         StudentEntity studentEntity = new StudentEntity();
         studentEntity.setStudentName("鲁班");
         studentEntity.setTeacherEntity(teacherEntity);

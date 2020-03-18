@@ -20,6 +20,7 @@
         <module>springService</module>
         <module>springMVC</module>
         <module>springHibernate</module>
+        <module>MyHibernate</module>
     </modules>
 
     <dependencies>

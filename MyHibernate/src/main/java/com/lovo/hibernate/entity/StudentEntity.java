@@ -19,8 +19,11 @@ public class StudentEntity {
 
     @Column(name = "s_name",length = 48)
     private String studentName;
-
-    @ManyToOne
+    /**
+     * fetch 表示加载方式
+     * cascade 级联操作 all表示级联操作所有，删除主表会删除主表的记录慎用
+     */
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "f_t_id")
     private TeacherEntity teacherEntity;
 

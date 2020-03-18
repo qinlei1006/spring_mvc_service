@@ -23,6 +23,15 @@ public class TeacherEntity {
     @Column(name = "t_class",length = 48)
     private String teacherClass;
 
+
+    public String getTeacherClass() {
+        return teacherClass;
+    }
+
+    public void setTeacherClass(String teacherClass) {
+        this.teacherClass = teacherClass;
+    }
+
     public String getTeacherId() {
         return teacherId;
     }
