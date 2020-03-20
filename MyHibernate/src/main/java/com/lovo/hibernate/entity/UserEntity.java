@@ -13,18 +13,23 @@ public class UserEntity {
 //    name列名，length长度，nullable是否可以为空
     @Column(name = "u_name",length = 48,nullable = false)
     private String userName;
+
 //    insertable  = false 表示添加的时候不把数据添加到数据库
 //    @Column(insertable = false,length = 48,name = "u_password")
 //    不与表进行映射（冗余字段）
 //    @Transient //暂态
     @Column(length = 48,name = "u_password")
     private String password;
+
 //   将java不认识的时间字符串转为数据时间
     @Column(columnDefinition = "TIMESTAMP")
     private String addDate;
+
 //    定义文本数据
     @Column(columnDefinition = "TEXT")
     private String info;
+
+
 
 
     private int age;
