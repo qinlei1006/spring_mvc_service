@@ -9,7 +9,8 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int  userId;
+    @Column(name = "u_id")
+    private String  userId;
 //    name列名，length长度，nullable是否可以为空
     @Column(name = "u_name",length = 48,nullable = false)
     private String userName;
@@ -22,16 +23,14 @@ public class UserEntity {
     private String password;
 
 //   将java不认识的时间字符串转为数据时间
-    @Column(columnDefinition = "TIMESTAMP")
+    @Column(columnDefinition = "TIMESTAMP",name = "u_addDate")
     private String addDate;
 
 //    定义文本数据
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT",name = "u_info")
     private String info;
 
-
-
-
+    @Column(name = "u_age")
     private int age;
 
     public UserEntity(String userName, String password, String addDate, String info, int age) {
@@ -48,11 +47,11 @@ public class UserEntity {
 
 
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
