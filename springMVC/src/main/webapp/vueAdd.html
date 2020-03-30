@@ -28,7 +28,9 @@
         },
         methods:{
             submitInfo:function () {
-                axios.post('addUserInfo.lovo',{post:this.post,salary:this.salary,}).then(function (res) {
+                axios.post('addUserInfo.lovo',
+                    {post:this.post,salary:this.salary,}
+                    ).then(function (res) {
                       alert(res)
                 })
             }

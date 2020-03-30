@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/springMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/authority" />
+    <file type="web" url="file://$PROJECT_DIR$/authorityManagement" />
+    <file type="web" url="file://$PROJECT_DIR$/gradeProject" />
     <file type="web" url="file://$PROJECT_DIR$/springMVC" />
     <file type="web" url="file://$PROJECT_DIR$/springService" />
   </component>

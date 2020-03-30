@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="formLogin" align="center">
+    用户名字：<input type="text"  v-model="userName"><p/>
+
+    用户密码：<input type="text"  v-model="password"><p/>
+
+    <a @click="login1">登录</a><p/>
+</div>
+
+<script>
+    new Vue({
+        el:"#formLogin",
+        data:{
+            userName:"",
+            password:"",
+        },
+        methods:{
+            login1:function () {
+                axios.post("user/login",
+                    {userName:this.userName, password:this.password,
+                    }).then(function (response) {
+                     if (response.data == "ok"){
+                         window.location = "successfully.html";
+                     }else {
+                         alert(response.data)
+                     }
+                //     捕捉上个方法的异常
+                }).catch(function (error) {
+                     alert(error)
+                })
+
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

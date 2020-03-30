@@ -27,4 +27,5 @@ public interface UserDao extends CrudRepository<UserEntity,String> {
     @Query("from UserEntity where age > ?1 ")
     public  List<UserEntity> getPageList(int age, PageRequest request);
 
+
 }

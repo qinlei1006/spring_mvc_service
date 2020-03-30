@@ -6,14 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringHibernate1" />
-        <module name="springMVC" />
-        <module name="MyHibernate" />
-        <module name="springService" />
         <module name="springData" />
+        <module name="authority" />
+        <module name="springMVC" />
+        <module name="springService" />
+        <module name="gradeProject" />
+        <module name="MyHibernate" />
+        <module name="SpringHibernate1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authorityManagement" target="1.7" />
       <module name="hibernateJ174" target="1.7" />
       <module name="mvc" target="1.7" />
       <module name="MySpringHibernate" target="1.7" />

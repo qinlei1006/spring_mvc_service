@@ -22,6 +22,8 @@
         <module>MyHibernate</module>
         <module>SpringHibernate1</module>
         <module>springData</module>
+        <module>gradeProject</module>
+        <module>authority</module>
     </modules>
 
     <dependencies>
