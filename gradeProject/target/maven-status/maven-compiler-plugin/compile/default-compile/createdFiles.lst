@@ -1,0 +1,16 @@
+com\lovo\service\IGradeService.class
+com\lovo\dao\IGradeDao.class
+com\lovo\entity\RoleEntity.class
+com\lovo\entity\RoleUserEntity.class
+com\lovo\service\impl\UserServiceImpl.class
+com\lovo\controller\UserController.class
+com\lovo\dao\IRoleDao.class
+com\lovo\dao\LoginDao.class
+com\lovo\service\impl\RoleServiceImpl.class
+com\lovo\service\IRoleService.class
+com\lovo\service\IUserService.class
+com\lovo\entity\GradeEntity.class
+com\lovo\service\impl\GradeServiceImpl.class
+com\lovo\dao\BasicDao.class
+com\lovo\entity\RoleGradeEntity.class
+com\lovo\entity\UserEntity.class

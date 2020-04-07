@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lovo.ss.dao.IGoodsDao">
+
+
+    <select id="findById" resultType="int" parameterType="int">
+        select g.f_number from t_goods g where pk_id=#{param1}
+    </select>
+
+    <update id="UpdateNumber" parameterType="map">
+       update  t_goods set f_number=#{number} where pk_id=#{goodsId}
+    </update>
+
+
+    <insert id="add" parameterType="goodsEntity">
+        insert into t_goods(f_goodsName,f_number)values (#{goodsName},#{number})
+    </insert>
+</mapper>

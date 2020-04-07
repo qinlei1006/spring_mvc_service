@@ -12,6 +12,7 @@
         <module name="springService" />
         <module name="gradeProject" />
         <module name="MyHibernate" />
+        <module name="MySpringBoot" />
         <module name="SpringHibernate1" />
       </profile>
     </annotationProcessing>

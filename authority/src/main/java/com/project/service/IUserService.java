@@ -21,4 +21,5 @@ public interface IUserService {
      * @return
      */
     public  UserEntity login(String name, String password);
+
 }

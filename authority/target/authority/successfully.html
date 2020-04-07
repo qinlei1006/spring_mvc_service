@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="dId" align="center">
+<h1>登录成功</h1>
+    <ul>
+        <li v-for="u in info">
+            <a :href="'/authority_war/'+u.gradeUrl">{{u.gradeUrl}}</a>
+        </li>
+    </ul>
+    <table border="1">
+        <tr><th>用户名</th><th>权限</th><th>权限URL</th></tr>
+        <tr v-for="u in info">
+            <td>{{u.userName}}</td>
+            <td>{{u.gradeName}}</td>
+            <td>{{u.gradeUrl}}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+  window.onload=function () {
+     axios({
+         url:"user/findByGrade",
+         method:"get",
+     }).then(function (response) {
+         var allPermission=response.data;
+         console.log(allPermission);
+         new Vue({
+             el:"#dId",
+             data:{
+                 info:allPermission
+             },
+             method: {
+
+                 hypelink(URL){
+
+                 }
+             }
+         });
+     }).catch(function (error) {
+          console.log(error)
+     })
+  }
+</script>
+
+</body>
+</html>
